@@ -293,8 +293,8 @@ export default function App() {
       )}
       <div className="w-24 h-auto fixed">
         <img
-          src="/growthx-logo.png"
-          alt="growthx-logo"
+          src="/logoipsum.svg"
+          alt="logo-ipsum"
           className="object-contain"
         />
       </div>
