@@ -291,7 +291,7 @@ export default function App() {
           ></div>
         </>
       )}
-      <div className="w-24 h-auto fixed">
+      <div className="w-36 h-auto fixed">
         <img
           src="/logoipsum.svg"
           alt="logo-ipsum"
