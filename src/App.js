@@ -3,22 +3,11 @@ import { useRef, useState, useEffect } from "react";
 import Button from "./components/button";
 import ErrorMsg from "./components/errormsg";
 
+import useOutsideAlerter from "./hooks/useOutsideAlerter";
+
 import { industriesData } from "./industriesData";
 import { countriesData } from "./countriesData";
-
-function useOutsideAlerter(ref, action) {
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (ref.current && !ref.current.contains(event.target)) {
-        action(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [ref, action]);
-}
+import { rolesData, goalData } from "./constants";
 
 export default function App() {
   const [selectBlock, setSelectedBlock] = useState(false);
@@ -120,52 +109,6 @@ export default function App() {
 
   const goalCount =
     goals.length === 2 ? false : goals.length === 1 ? "1 more" : "2";
-
-  const rolesData = [
-    {
-      id: "A",
-      name: "Founder or CXO",
-    },
-    {
-      id: "B",
-      name: "Product Team",
-    },
-    {
-      id: "C",
-      name: "Marketing Team",
-    },
-    {
-      id: "D",
-      name: "VC",
-    },
-    {
-      id: "E",
-      name: "Other",
-    },
-  ];
-
-  const goalData = [
-    {
-      id: "A",
-      name: "Get hired",
-    },
-    {
-      id: "B",
-      name: "Get promoted",
-    },
-    {
-      id: "C",
-      name: "Connect with like-minded people",
-    },
-    {
-      id: "D",
-      name: "Structured approach to growth",
-    },
-    {
-      id: "E",
-      name: "Build a growth team",
-    },
-  ];
 
   useEffect(() => {
     if (selectBlock === true) {
@@ -288,15 +231,11 @@ export default function App() {
             style={{
               width: `${(topWidthBar / 7) * 100}%`,
             }}
-          ></div>
+          />
         </>
       )}
       <div className="w-36 h-auto fixed">
-        <img
-          src="/logoipsum.svg"
-          alt="logo-ipsum"
-          className="object-contain"
-        />
+        <img src="/logoipsum.svg" alt="logo-ipsum" className="object-contain" />
       </div>
       {!submitScreen && (
         <>
