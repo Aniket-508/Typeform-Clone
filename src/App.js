@@ -9,9 +9,10 @@ import ErrorMsg from "./components/ui/errormsg";
 import useOutsideAlerter from "./hooks/useOutsideAlerter";
 import { cn } from "./utils/helper";
 
-import { industriesData } from "./industriesData";
-import { countriesData } from "./countriesData";
-import { rolesData, goalData } from "./constants";
+import { industriesData } from "./constants/industries";
+import { countriesData } from "./constants/countries";
+import { rolesData } from "./constants/roles";
+import { goalsData } from "./constants/goals";
 
 export default function App() {
   const [selectBlock, setSelectedBlock] = useState(false);
@@ -233,8 +234,8 @@ export default function App() {
             <br />
             <div className="text-base md:text-xl opacity-70">
               <p>
-                The GrowthX experience is designed by keeping in mind the
-                working hours founders & full time operators typically work in.
+                This experience is designed by keeping in mind the working hours
+                founders & full time operators typically work in.
               </p>
               <br />
               <p>You will spend</p>
@@ -436,7 +437,7 @@ export default function App() {
             <br />
             {goalCount && <p className="text-sm mb-2">Choose {goalCount}</p>}
             <div className="space-y-2">
-              {goalData.map((goal) => (
+              {goalsData.map((goal) => (
                 <Section.Options
                   key={goal.id}
                   active={goals.includes(goal.name)}
