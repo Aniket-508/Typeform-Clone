@@ -6,7 +6,7 @@ const Section = forwardRef(function ({ className, ...attr }, ref) {
     <div
       ref={ref}
       className={cn(
-        "flex justify-center items-center flex-1 text-white px-6 md:px-0 min-h-screen snap-center",
+        "flex justify-center items-center flex-1 text-white px-12 md:px-0 min-h-screen snap-center",
         className
       )}
       {...attr}

@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 
 import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 import Progress from "./components/ui/progress";
 import Section from "./components/ui/section";
 import Button from "./components/ui/button";
@@ -224,7 +225,7 @@ export default function App() {
   };
 
   return (
-    <div className="bg-black pt-5 p-4 relative flex flex-col h-screen overflow-y-auto snap-y snap-mandatory">
+    <div className="bg-black relative flex flex-col h-screen overflow-y-auto snap-y snap-mandatory">
       {!submitScreen && <Progress width={topWidthBar} total={7} />}
       <Navbar />
       {!submitScreen && (
@@ -613,6 +614,7 @@ export default function App() {
           <Section.Title>All done! Thanks for your time.</Section.Title>
         </Section>
       )}
+      <Footer />
     </div>
   );
 }
